@@ -10,6 +10,12 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Write your commands here
+      ls
 - task: publishhtmlreport@1
   inputs:
     htmlType: 'genericHTML'
