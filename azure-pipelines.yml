@@ -10,6 +10,9 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+- task: PublishHtmlReport@1
+  inputs:
+    reportDir: 'test'
 - task: SonarQubePrepare@4
   inputs:
     SonarQube: 'test_code_scan'
