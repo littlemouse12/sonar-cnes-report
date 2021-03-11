@@ -13,29 +13,3 @@ steps:
 - task: PublishHtmlReport@1
   inputs:
     reportDir: 'test'
-- task: SonarQubePrepare@4
-  inputs:
-    SonarQube: 'test_code_scan'
-    scannerMode: 'Other'
-- task: Maven@3
-  inputs:
-    mavenPomFile: 'pom.xml'
-    publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '1.8'
-    mavenVersionOption: 'Default'
-    mavenOptions: '-Xmx3072m'
-    mavenAuthenticateFeed: false
-    effectivePomSkip: false
-    sonarQubeRunAnalysis: true
-    sqMavenPluginVersionChoice: 'latest'
-
-- task: SonarQubePublish@4
-  inputs:
-    pollingTimeoutSec: '300'
-    
-- task: PublishPipelineArtifact@1
-  inputs:
-    targetPath: '$(Pipeline.Workspace)'
-    publishLocation: 'pipeline'
