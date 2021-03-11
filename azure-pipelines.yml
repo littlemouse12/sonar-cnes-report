@@ -12,4 +12,4 @@ pool:
 steps:
 - task: PublishHtmlReport@1
   inputs:
-    reportDir: 'test'
+    reportDir: '1.html'
