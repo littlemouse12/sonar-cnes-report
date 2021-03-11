@@ -10,6 +10,7 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: PublishHtmlReport@1
+- task: publishhtmlreport@1
   inputs:
-    reportDir: '1.html'
+    htmlType: 'genericHTML'
+    htmlPath: '1.html'
