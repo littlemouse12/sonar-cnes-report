@@ -17,7 +17,8 @@ steps:
       # Write your commands here
       ls
 
-- task: PublishHtmlReport@1
+- task: PublishMutationReport@0
   inputs:
-    reportDir: '$(Build.SourcesDirectory)/1.html'
+    reportPattern: '$(Build.SourcesDirectory)/1.html'
+
 
