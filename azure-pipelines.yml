@@ -16,7 +16,10 @@ steps:
     script: |
       # Write your commands here
       ls
-
+- task: publishhtmlreport@1
+  inputs:
+    htmlType: 'sonarqube'
+    htmlPath: '$(Build.SourcesDirectory)/1.html'
 - task: PublishMutationReport@0
   inputs:
     reportPattern: '$(Build.SourcesDirectory)/1.html'
