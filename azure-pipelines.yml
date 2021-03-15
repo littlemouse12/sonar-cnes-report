@@ -16,7 +16,8 @@ steps:
     script: |
       # Write your commands here
       ls
-- task: publishhtmlreport@1
+
+- task: PublishMutationReport@0
   inputs:
-    htmlType: 'genericHTML'
-    htmlPath: '$(Build.SourcesDirectory)/1.html'
+    reportPattern: '$(Build.SourcesDirectory)/1.html'
+
